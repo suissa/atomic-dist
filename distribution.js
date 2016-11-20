@@ -12,12 +12,12 @@ const initCoord = [0, 0]
   
 const getCoord = (arr, [x, y]) => arr[x][y]
 
-const getLastCoord = input => [input.length-1, input.slice(-1)[0].length-1]
+const getLastCoord = (input) => [input.length-1, input.slice(-1)[0].length-1]
 
-const orderedCoords = input => mount([initCoord], getLastCoord(input)).reverse()
+const orderedCoords = (input) => mount([initCoord], getLastCoord(input)).reverse()
 
 const coordsToValues = (coords, input) => coords.map(getCoord.bind(null, input))
 
-const distribution = input => coordsToValues(orderedCoords(input), input)
+const distribution = (input) => coordsToValues(orderedCoords(input), input)
 
 module.exports = distribution
